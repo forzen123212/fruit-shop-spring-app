@@ -1,6 +1,7 @@
 package com.example.springfirsthw.repositories;
 
 import com.example.springfirsthw.domain.Book;
+import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -8,15 +9,13 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
-
 @Repository
 public class BookRepositoryImpl implements BookRepository {
     private static final String CANNOT_SAVE_BOOK_TO_DB_MSG =
             "Cannot save book to database: ";
     private static final String FAILED_TO_GET_ALL_BOOKS_FROM_DB_MSG =
             "Failed to get all the books from DB!";
-    private SessionFactory factory;
+    private final SessionFactory factory;
 
     @Autowired
     public BookRepositoryImpl(SessionFactory factory) {

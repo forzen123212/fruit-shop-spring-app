@@ -6,9 +6,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import lombok.Data;
 import jakarta.persistence.Table;
 import java.math.BigDecimal;
+import lombok.Data;
 
 @Entity
 @Data
@@ -44,10 +44,6 @@ public class Book {
         this.coverImage = coverImage;
     }
 
-    public long getId() {
-        return id;
-    }
-
     public void setId(long id) {
         this.id = id;
     }
@@ -76,16 +72,8 @@ public class Book {
         this.price = price;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public String getCoverImage() {
-        return coverImage;
     }
 
     public void setCoverImage(String coverImage) {
