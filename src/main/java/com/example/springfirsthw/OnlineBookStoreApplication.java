@@ -25,7 +25,7 @@ public class OnlineBookStoreApplication {
             Book book = new Book();
             book.setTitle("The Great Gatsby");
             book.setAuthor("Scott Fitzgerald");
-            book.setIsbn("9780333791035");
+            book.setIsbn("100");
             book.setPrice(BigDecimal.valueOf(100L));
             book.setDescription("Some description");
 
