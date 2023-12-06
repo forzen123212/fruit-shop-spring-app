@@ -1,10 +1,13 @@
 package com.example.springfirsthw.service;
 
-import com.example.springfirsthw.domain.Book;
+import com.example.springfirsthw.dto.BookDto;
+import com.example.springfirsthw.dto.CreateBookRequestDto;
 import java.util.List;
 
 public interface BookService {
-    Book save(Book book);
+    BookDto save(CreateBookRequestDto book);
 
-    List<Book> findAll();
+    List<BookDto> getAll();
+
+    BookDto getById(Long id);
 }
