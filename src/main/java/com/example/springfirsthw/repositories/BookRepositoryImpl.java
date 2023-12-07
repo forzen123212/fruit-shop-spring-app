@@ -18,7 +18,7 @@ public class BookRepositoryImpl implements BookRepository {
     private static final String FAILED_TO_GET_ALL_BOOKS_FROM_DB_MSG =
             "Failed to get all the books from DB!";
     private static final String FAILED_TO_FIND_BOOK_BY_ID =
-            "Failed to find book by id in DB!";
+            "Failed to find book by id in DB: ";
 
     private final SessionFactory factory;
 
@@ -45,7 +45,7 @@ public class BookRepositoryImpl implements BookRepository {
             if (transaction != null) {
                 transaction.rollback();
             }
-            throw new RuntimeException(CANNOT_SAVE_BOOK_TO_DB_MSG);
+            throw new RuntimeException(CANNOT_SAVE_BOOK_TO_DB_MSG + book);
         } finally {
             if (session != null) {
                 session.close();
@@ -55,12 +55,12 @@ public class BookRepositoryImpl implements BookRepository {
     }
 
     @Override
-    public Optional<Book> findById(Long id) {
+    public Optional<Book> getById(Long id) {
         try (Session session = factory.openSession()) {
             return Optional.ofNullable(session.get(Book.class, id));
         } catch (Exception e) {
             throw new RuntimeException(
-                    FAILED_TO_FIND_BOOK_BY_ID);
+                    FAILED_TO_FIND_BOOK_BY_ID + id);
         }
     }
 }
