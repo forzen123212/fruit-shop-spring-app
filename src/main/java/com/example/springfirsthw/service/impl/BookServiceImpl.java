@@ -31,7 +31,7 @@ public class BookServiceImpl implements BookService {
     }
 
     public BookDto getById(Long id) {
-        Book book = bookRepository.getById(id)
+        Book book = bookRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException(NO_BOOK_BY_ID_FOUND_MSG + id));
         return bookMapper.toBookDto(book);
     }
