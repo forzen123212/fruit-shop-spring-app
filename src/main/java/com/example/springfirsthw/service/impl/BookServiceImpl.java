@@ -19,9 +19,9 @@ public class BookServiceImpl implements BookService {
     private final BookRepository bookRepository;
     private final BookMapper bookMapper;
 
-    public BookDto save(CreateBookRequestDto book) {
+    public BookDto save(CreateBookRequestDto bookDto) {
         return bookMapper
-                .toBookDto(bookRepository.save(bookMapper.toModel(book)));
+                .toBookDto(bookRepository.save(bookMapper.toModel(bookDto)));
     }
 
     public List<BookDto> getAll() {

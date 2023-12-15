@@ -5,7 +5,7 @@ import com.example.springfirsthw.dto.CreateBookRequestDto;
 import java.util.List;
 
 public interface BookService {
-    BookDto save(CreateBookRequestDto book);
+    BookDto save(CreateBookRequestDto bookDto);
 
     BookDto update(Long id, CreateBookRequestDto requestDto);
 
