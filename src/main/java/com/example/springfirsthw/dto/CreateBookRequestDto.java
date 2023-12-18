@@ -1,24 +1,23 @@
 package com.example.springfirsthw.dto;
 
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.Size;
 import java.math.BigDecimal;
 import lombok.Data;
-import org.hibernate.validator.constraints.ISBN;
 
 @Data
 public class CreateBookRequestDto {
-    @NotBlank(message = "can't be blank")
-    @Size(min = 1, max = 50)
+    @NotNull(message = "can't be null")
+    @Size(min = 1, max = 100)
     private String title;
-    @NotBlank(message = "can't be blank!")
+    @NotNull(message = "can't be null")
     private String author;
     @NotNull(message = "can`t be null")
-    @ISBN(message = "wrong format of ISBN")
+    @Size(min = 10, max = 13)
     private String isbn;
-    @Positive(message = "must be more than 1")
+    @NotNull(message = "can`t be null")
+    @Positive(message = "must be more or equals 0")
     private BigDecimal price;
     private String description;
     private String coverImage;
