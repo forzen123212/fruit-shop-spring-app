@@ -3,7 +3,6 @@ package com.example.bookshop.controller;
 import com.example.bookshop.dto.book.BookDto;
 import com.example.bookshop.dto.book.CreateBookRequestDto;
 import com.example.bookshop.service.BookService;
-import jakarta.validation.Valid;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -19,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/api/books")
+@RequestMapping("api/books")
 public class BookController {
 
     private final BookService bookService;
@@ -35,7 +34,7 @@ public class BookController {
     }
 
     @PostMapping
-    public BookDto createBook(@RequestBody @Valid CreateBookRequestDto bookRequestDto) {
+    public BookDto createBook(@RequestBody CreateBookRequestDto bookRequestDto) {
         return bookService.save(bookRequestDto);
     }
 
