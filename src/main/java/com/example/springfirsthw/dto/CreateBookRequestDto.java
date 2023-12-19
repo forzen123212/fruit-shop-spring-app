@@ -11,14 +11,14 @@ public class CreateBookRequestDto {
     @NotNull(message = "can't be null")
     @Size(min = 1, max = 100)
     private String title;
-    @NotNull(message = "can't be null")
+    @NotNull(message = "author value can't be null")
     private String author;
-    @NotNull(message = "can`t be null")
     @Size(min = 10, max = 13)
     private String isbn;
-    @NotNull(message = "can`t be null")
+    @NotNull(message = "price can`t be null")
     @Positive(message = "must be more or equals 0")
     private BigDecimal price;
     private String description;
     private String coverImage;
+
 }
