@@ -19,7 +19,6 @@ public class CreateBookRequestDto {
     @ISBN(message = "wrong format of ISBN")
     private String isbn;
     @Positive(message = "must be more than 1")
-    @NotBlank(message = "can`t be blank!")
     private BigDecimal price;
     private String description;
     private String coverImage;
