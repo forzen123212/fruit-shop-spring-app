@@ -9,6 +9,7 @@ import com.example.bookshop.repositories.BookRepository;
 import com.example.bookshop.service.BookService;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 @RequiredArgsConstructor
@@ -24,8 +25,9 @@ public class BookServiceImpl implements BookService {
                 .toBookDto(bookRepository.save(bookMapper.toModel(bookDto)));
     }
 
-    public List<BookDto> getAll() {
-        return bookRepository.findAll().stream()
+    @Override
+    public List<BookDto> getAll(Pageable pageable) {
+        return bookRepository.findAll(pageable).stream()
                 .map(bookMapper::toBookDto)
                 .toList();
     }
