@@ -1,4 +1,4 @@
-package com.example.springfirsthw.config;
+package com.example.bookshop.config;
 
 import org.mapstruct.InjectionStrategy;
 import org.mapstruct.NullValueCheckStrategy;

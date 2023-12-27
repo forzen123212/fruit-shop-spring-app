@@ -1,12 +1,12 @@
-package com.example.springfirsthw.service.impl;
+package com.example.bookshop.service.impl;
 
-import com.example.springfirsthw.domain.Book;
-import com.example.springfirsthw.dto.BookDto;
-import com.example.springfirsthw.dto.CreateBookRequestDto;
-import com.example.springfirsthw.exception.EntityNotFoundException;
-import com.example.springfirsthw.mapper.BookMapper;
-import com.example.springfirsthw.repositories.BookRepository;
-import com.example.springfirsthw.service.BookService;
+import com.example.bookshop.domain.Book;
+import com.example.bookshop.dto.book.BookDto;
+import com.example.bookshop.dto.book.CreateBookRequestDto;
+import com.example.bookshop.exception.EntityNotFoundException;
+import com.example.bookshop.mapper.BookMapper;
+import com.example.bookshop.repositories.BookRepository;
+import com.example.bookshop.service.BookService;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Pageable;
