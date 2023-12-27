@@ -31,12 +31,12 @@ public class CustomGlobalExceptionHandler extends ResponseEntityExceptionHandler
             @NonNull WebRequest request) {
 
         Map<String, Object> body = new LinkedHashMap<>();
-        body.put("timestamp", LocalDateTime.now());
-        body.put("status", HttpStatus.BAD_REQUEST);
+        body.put(TIMESTAMP_FOR_BODY, LocalDateTime.now());
+        body.put(STATUS_FOR_BODY, HttpStatus.BAD_REQUEST);
         List<String> errors = ex.getBindingResult().getAllErrors().stream()
                 .map(this::getErrorMessage)
                 .toList();
-        body.put("errors", errors);
+        body.put(ERRORS_FOR_BODY, errors);
 
         return new ResponseEntity<>(body, headers, status);
     }
