@@ -7,10 +7,14 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
 
 @Entity
 @Table(name = "users")
 @Data
+@SQLDelete(sql = "UPDATE users SET is_deleted = true WHERE id=?")
+@Where(clause = "deleted=false")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,4 +28,5 @@ public class User {
     @Column(nullable = false)
     private String lastName;
     private String shippingAddress;
+    private boolean deleted = false;
 }

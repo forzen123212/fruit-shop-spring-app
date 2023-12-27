@@ -19,6 +19,10 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 
 @ControllerAdvice
 public class CustomGlobalExceptionHandler extends ResponseEntityExceptionHandler {
+    private static final String TIMESTAMP_FOR_BODY = "timestamp";
+    private static final String STATUS_FOR_BODY = "status";
+    private static final String ERRORS_FOR_BODY = "errors";
+
     @Override
     protected ResponseEntity<Object> handleMethodArgumentNotValid(
             MethodArgumentNotValidException ex,
@@ -54,9 +58,9 @@ public class CustomGlobalExceptionHandler extends ResponseEntityExceptionHandler
     @ExceptionHandler(EntityNotFoundException.class)
     public ResponseEntity<Object> handleEntityNotFoundException(EntityNotFoundException ex) {
         Map<String, Object> body = new LinkedHashMap<>();
-        body.put("timestamp", LocalDateTime.now());
-        body.put("status", HttpStatus.NOT_FOUND);
-        body.put("errors", ex.getMessage());
+        body.put(TIMESTAMP_FOR_BODY, LocalDateTime.now());
+        body.put(STATUS_FOR_BODY, HttpStatus.NOT_FOUND);
+        body.put(ERRORS_FOR_BODY, ex.getMessage());
         return new ResponseEntity<>(body, HttpStatus.NOT_FOUND);
     }
 }
