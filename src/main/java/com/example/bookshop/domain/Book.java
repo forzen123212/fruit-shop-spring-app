@@ -1,4 +1,4 @@
-package com.example.springfirsthw.domain;
+package com.example.bookshop.domain;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

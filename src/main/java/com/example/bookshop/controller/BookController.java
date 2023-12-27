@@ -1,8 +1,8 @@
-package com.example.springfirsthw.controller;
+package com.example.bookshop.controller;
 
-import com.example.springfirsthw.dto.BookDto;
-import com.example.springfirsthw.dto.CreateBookRequestDto;
-import com.example.springfirsthw.service.BookService;
+import com.example.bookshop.dto.book.BookDto;
+import com.example.bookshop.dto.book.CreateBookRequestDto;
+import com.example.bookshop.service.BookService;
 import jakarta.validation.Valid;
 import java.util.List;
 import lombok.RequiredArgsConstructor;

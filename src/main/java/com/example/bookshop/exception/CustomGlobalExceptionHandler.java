@@ -1,4 +1,4 @@
-package com.example.springfirsthw.exception;
+package com.example.bookshop.exception;
 
 import java.time.LocalDateTime;
 import java.util.LinkedHashMap;
@@ -44,6 +44,11 @@ public class CustomGlobalExceptionHandler extends ResponseEntityExceptionHandler
             return field + " " + message;
         }
         return e.getDefaultMessage();
+    }
+
+    @ExceptionHandler(RegistrationException.class)
+    protected ResponseEntity<Object> handleRegistrationException(RegistrationException ex) {
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(EntityNotFoundException.class)

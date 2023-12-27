@@ -1,7 +1,7 @@
-package com.example.springfirsthw.service;
+package com.example.bookshop.service;
 
-import com.example.springfirsthw.dto.BookDto;
-import com.example.springfirsthw.dto.CreateBookRequestDto;
+import com.example.bookshop.dto.book.BookDto;
+import com.example.bookshop.dto.book.CreateBookRequestDto;
 import java.util.List;
 
 public interface BookService {

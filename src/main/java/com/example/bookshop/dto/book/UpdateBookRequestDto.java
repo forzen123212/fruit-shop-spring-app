@@ -1,11 +1,10 @@
-package com.example.springfirsthw.dto;
+package com.example.bookshop.dto.book;
 
 import java.math.BigDecimal;
 import lombok.Data;
 
 @Data
-public class BookDto {
-    private long id;
+public class UpdateBookRequestDto {
     private String title;
     private String author;
     private String isbn;
